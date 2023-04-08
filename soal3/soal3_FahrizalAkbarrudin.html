@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Input Nilai</title>
+</head>
+<body>
+	<h1>Input Nilai</h1>
+	<table>
+		<tr>
+			<td>Masukkan nilai ke-1:</td>
+			<td><input type="number" id="nilai1"></td>
+		</tr>
+		<tr>
+			<td>Masukkan nilai ke-2:</td>
+			<td><input type="number" id="nilai2"></td>
+		</tr>
+		<tr>
+			<td>Masukkan nilai ke-3:</td>
+			<td><input type="number" id="nilai3"></td>
+		</tr>
+	</table>
+	<button onclick="hitung()">Hitung</button>
+	<p id="hasil"></p>
+
+	<script>
+		function hitung() {
+			var nilai1 = parseInt(document.getElementById("nilai1").value);
+			var nilai2 = parseInt(document.getElementById("nilai2").value);
+			var nilai3 = parseInt(document.getElementById("nilai3").value);
+
+			var nilai = [nilai1, nilai2, nilai3];
+			var total = 0;
+			var rata = 0;
+
+			for (var i = 0; i < nilai.length; i++) {
+				total += nilai[i];
+			}
+
+			rata = total / nilai.length;
+
+			document.getElementById("hasil").innerHTML = "Nilai yang diinput adalah " + nilai + "<br>" +
+														  "Total nilai yang diinput adalah " + total + "<br>" +
+														  "Rata-rata nilai yang diinput adalah " + rata;
+		}
+	</script>
+</body>
+</html>

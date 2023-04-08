@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+    <title>Konversi Rupiah Dollar</title>
+  </head>
+  <body>
+    <label for="rupiah">Masukan Uang Rupiah</label>
+    <input type="text" id="Rupiah">
+    <button onclick="konversi()">Konversi</button>
+    <br><br>
+    <label for="dollar">Hasil konversi Dollar</label>
+    <input type="text" id="Dollar" readonly>
+    <script>
+        function konversi(){
+          //mengambil nilai dari inputan user
+          let rupiah = document.getElementById("Rupiah").value;
+
+          //mengkonversi dari nilai Rupiah ke Dollar
+          let dollar = rupiah / 14591;
+
+          //menampilkan nilai konversi
+          document.getElementById("Dollar").value = dollar.toFixed(2);
+        }
+      </script>
+  </body>
+</html>

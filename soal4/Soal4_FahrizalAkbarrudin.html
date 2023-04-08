@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tabel Gaji Karyawan</title>
+	<script type="text/javascript">
+		function hitungGaji() {
+			// ambil nilai dari input golongan dan jam kerja
+			var golongan = parseInt(document.getElementById("golongan").value);
+			var jamKerja = parseInt(document.getElementById("jamkerja").value);
+
+			// hitung upah per jam berdasarkan golongan
+			var upahPerJam = 0;
+			switch(golongan) {
+				case 1:
+					upahPerJam = 3000;
+					break;
+				case 2:
+					upahPerJam = 3500;
+					break;
+				case 3:
+					upahPerJam = 4000;
+					break;
+				case 4:
+					upahPerJam = 4500;
+					break;
+			}
+
+			// hitung gaji
+			var gaji = 0;
+			if(jamKerja <= 40) {
+				gaji = jamKerja * upahPerJam;
+			} else {
+				gaji = (40 * upahPerJam) + ((jamKerja - 40) * 1.5 * upahPerJam);
+			}
+
+			// tampilkan hasil
+			document.getElementById("gaji").innerHTML = "Gaji mingguan karyawan adalah: " + gaji + " rupiah";
+		}
+	</script>
+</head>
+<body>
+	<h1>Tabel Gaji Karyawan</h1>
+	<table border="1">
+		<tr>
+			<th>Golongan</th>
+			<th>Upah per Jam</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>3.000 rupiah</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>3.500 rupiah</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>4.000 rupiah</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>4.500 rupiah</td>
+		</tr>
+	</table>
+	<br>
+	<label for="golongan">Golongan:</label>
+	<input type="number" id="golongan" name="golongan">
+	<br>
+	<label for="jamkerja">Jam Kerja:</label>
+	<input type="number" id="jamkerja" name="jamkerja">
+	<br><br>
+	<button onclick="hitungGaji()">Hitung Gaji</button>
+	<p id="gaji"></p>
+</body>
+</html>

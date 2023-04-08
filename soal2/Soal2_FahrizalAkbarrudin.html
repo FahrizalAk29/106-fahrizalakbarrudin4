@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lama Bekerja Seorang Pegawai</title>
+  </head>
+  <body>
+    <label for="jam-masuk">Jam Masuk:</label>
+    <input type="number" id="jam-masuk" min="1" max="12">
+    <br><br>
+    <button onclick="perhitunganlamabekerja()">Perhitungan Lama Bekerja</button>
+    <br><br>
+    <p id="hasilbekerja"></p>
+    <script>
+        function perhitunganlamabekerja(){
+          //mengambil nilai dari inputan user
+          let jamMasuk = parseInt(document.getElementById("jam-masuk").value);
+          let jamKeluar =
+          let jamKeluar = parseInt(document.getElementById("jam-keluar").value);
+
+          //Menghitung total jam bekerja pegawai
+          let lamabekerja = 0;
+          if(jamkeluar > jamMasuk){
+            lamabekerja = jamKeluar - jamMasuk;
+          } else {
+            lamabekerja 12 - jamMasuk + jamkKeluar;
+          }
+          //menampilkan hasil jam bekerja pegawai
+          let hasil = document.getElementById("hasilbekerja");
+          hasil.innerHTML = "Lama Bekerja" + lamabekerja + "jam";
+        }
+      </script>
+  </body>
+</html>
